@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>bd.gov.banbeis</groupId>
-	<artifactId>iims</artifactId>
+	<artifactId>iims-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>iims</name>
+	<name>iims-service</name>
 	<description>Integrated Institue Management System</description>
 	<properties>
 		<java.version>17</java.version>
