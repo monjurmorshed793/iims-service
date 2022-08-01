@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/iims
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+  jpa:
+    show-sql: true
+  liquibase:
+    change-log: db/master.xml
+    enabled: true
+
+#    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/iims
+#    user: root
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    password: password
