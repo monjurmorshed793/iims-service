@@ -1,6 +1,6 @@
 package bd.gov.banbeis.iims.service.security;
 
-import bd.gov.banbeis.iims.domain.security.SystemPrincipal;
+import bd.gov.banbeis.iims.domain.security.helper.SystemPrincipal;
 import bd.gov.banbeis.iims.domain.security.User;
 import bd.gov.banbeis.iims.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

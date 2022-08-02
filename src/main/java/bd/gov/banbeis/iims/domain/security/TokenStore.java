@@ -11,7 +11,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-@Table(name = "token_store")
+@Table(name = "token_store", indexes = @Index(columnList = "user_id"))
 @EntityListeners(AuditingEntityListener.class)
 public class TokenStore extends AbstractAuditLog {
     @Id

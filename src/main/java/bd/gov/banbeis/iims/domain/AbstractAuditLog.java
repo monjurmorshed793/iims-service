@@ -7,6 +7,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 
+import javax.persistence.Column;
 import java.time.Instant;
 
 @Getter
@@ -17,7 +18,9 @@ public abstract class AbstractAuditLog {
     @LastModifiedDate
     private Instant modifiedOn;
     @CreatedBy
+    @Column(length = 25)
     private String createdBy;
     @LastModifiedBy
+    @Column(length = 25)
     private String modifiedBy;
 }

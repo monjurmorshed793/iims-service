@@ -1,5 +1,6 @@
-package bd.gov.banbeis.iims.domain.security;
+package bd.gov.banbeis.iims.domain.security.helper;
 
+import bd.gov.banbeis.iims.domain.security.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
