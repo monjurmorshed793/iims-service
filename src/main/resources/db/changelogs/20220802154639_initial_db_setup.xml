@@ -1,0 +1,230 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <changeSet author="monju (generated)" id="1659455205052-1">
+        <createTable tableName="area">
+            <column name="id" type="BINARY(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="areaPK"/>
+            </column>
+            <column name="area" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-2">
+        <createTable tableName="district">
+            <column name="id" type="BINARY(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="districtPK"/>
+            </column>
+            <column name="name" type="VARCHAR(50)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-3">
+        <createTable tableName="geography">
+            <column name="id" type="BINARY(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="geographyPK"/>
+            </column>
+            <column name="geography" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-4">
+        <createTable tableName="institute">
+            <column name="id" type="BINARY(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="institutePK"/>
+            </column>
+            <column name="address" type="VARCHAR(255)"/>
+            <column name="eiin" type="VARCHAR(255)"/>
+            <column name="is_mpo" type="BIT"/>
+            <column name="mobile" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="post" type="VARCHAR(255)"/>
+            <column name="area_id" type="BINARY(255)"/>
+            <column name="district_id" type="BINARY(255)"/>
+            <column name="geography_id" type="BINARY(255)"/>
+            <column name="institute_level_id" type="BINARY(255)"/>
+            <column name="institute_type_id" type="BINARY(255)"/>
+            <column name="management_type_id" type="BINARY(255)"/>
+            <column name="study_type_id" type="BINARY(255)"/>
+            <column name="upazila_id" type="BINARY(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-5">
+        <createTable tableName="institute_level">
+            <column name="id" type="BINARY(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="institute_levelPK"/>
+            </column>
+            <column name="level" type="VARCHAR(15)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-6">
+        <createTable tableName="institute_raw">
+            <column name="id" type="BINARY(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="institute_rawPK"/>
+            </column>
+            <column name="address" type="VARCHAR(255)"/>
+            <column name="area" type="VARCHAR(255)"/>
+            <column name="district" type="VARCHAR(255)"/>
+            <column name="eiin" type="VARCHAR(255)"/>
+            <column name="geography" type="VARCHAR(255)"/>
+            <column name="institute_level" type="VARCHAR(255)"/>
+            <column name="institute_name" type="VARCHAR(255)"/>
+            <column name="institute_type" type="VARCHAR(255)"/>
+            <column name="management" type="VARCHAR(255)"/>
+            <column name="mobile" type="VARCHAR(255)"/>
+            <column name="mpo" type="VARCHAR(255)"/>
+            <column name="post" type="VARCHAR(255)"/>
+            <column name="study_type" type="VARCHAR(255)"/>
+            <column name="upazila" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-7">
+        <createTable tableName="institute_type">
+            <column name="id" type="BINARY(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="institute_typePK"/>
+            </column>
+            <column name="type" type="VARCHAR(15)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-8">
+        <createTable tableName="management_type">
+            <column name="id" type="BINARY(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="management_typePK"/>
+            </column>
+            <column name="type" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-9">
+        <createTable tableName="role">
+            <column name="id" type="BINARY(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="rolePK"/>
+            </column>
+            <column name="role" type="VARCHAR(15)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-10">
+        <createTable tableName="study_type">
+            <column name="id" type="BINARY(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="study_typePK"/>
+            </column>
+            <column name="type" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-11">
+        <createTable tableName="token_store">
+            <column name="id" type="BINARY(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="token_storePK"/>
+            </column>
+            <column name="token" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_till" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-12">
+        <createTable tableName="upazila">
+            <column name="id" type="BINARY(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="upazilaPK"/>
+            </column>
+            <column name="name" type="VARCHAR(50)"/>
+            <column name="district_id" type="BINARY(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-13">
+        <createTable tableName="user">
+            <column name="id" type="BINARY(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="userPK"/>
+            </column>
+            <column name="email" type="VARCHAR(50)"/>
+            <column name="is_account_expired" type="BIT"/>
+            <column name="is_account_locked" type="BIT"/>
+            <column name="is_credentials_expired" type="BIT"/>
+            <column name="is_enabled" type="BIT"/>
+            <column name="mobile" type="VARCHAR(15)"/>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="raw_password" type="VARCHAR(25)"/>
+            <column name="token_valid_till" type="datetime(6)"/>
+            <column name="username" type="VARCHAR(25)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-14">
+        <createTable tableName="user_roles">
+            <column name="user_id" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="roles_id" type="BINARY(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-15">
+        <addUniqueConstraint columnNames="username" constraintName="UC_USERUSERNAME_COL" tableName="user"/>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-16">
+        <addUniqueConstraint columnNames="roles_id" constraintName="UK_amwlmdeik2qdnksxgd566knop" tableName="user_roles"/>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-17">
+        <createIndex indexName="IDX6991qhf6uirwipgknf5jlf3re" tableName="user">
+            <column name="username"/>
+            <column name="email"/>
+            <column name="mobile"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-18">
+        <createIndex indexName="IDX7exyeq6wdqt0j5pydc06avtwp" tableName="upazila">
+            <column name="name"/>
+            <column name="district_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-19">
+        <createIndex indexName="IDXheec006cvyn61bjq0bgmodukr" tableName="token_store">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-20">
+        <createIndex indexName="IDXkvkg405mr04cjytv1tuyh7ryr" tableName="district">
+            <column name="name"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-21">
+        <addForeignKeyConstraint baseColumnNames="district_id" baseTableName="institute" constraintName="FK2uup9sxcye66chbx6acgxo2ox" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="district" validate="true"/>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-22">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="user_roles" constraintName="FK55itppkw3i07do3h7qoclqd4k" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-23">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="token_store" constraintName="FK618bw15s4shrew372bjircqm3" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-24">
+        <addForeignKeyConstraint baseColumnNames="management_type_id" baseTableName="institute" constraintName="FKe6yps1o1yay5brpu7ekdr1jly" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="management_type" validate="true"/>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-25">
+        <addForeignKeyConstraint baseColumnNames="upazila_id" baseTableName="institute" constraintName="FKeorl5ibowyrjbsue1ng113hpk" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="upazila" validate="true"/>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-26">
+        <addForeignKeyConstraint baseColumnNames="institute_type_id" baseTableName="institute" constraintName="FKfkmhvg8q9fusbg6p3ku36o858" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="institute_type" validate="true"/>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-27">
+        <addForeignKeyConstraint baseColumnNames="district_id" baseTableName="upazila" constraintName="FKhat2bgqkr9vga57qxpppjm1x7" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="district" validate="true"/>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-28">
+        <addForeignKeyConstraint baseColumnNames="area_id" baseTableName="institute" constraintName="FKih8d8id2y2h9xkjnb1cgogukk" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="area" validate="true"/>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-29">
+        <addForeignKeyConstraint baseColumnNames="geography_id" baseTableName="institute" constraintName="FKisg8i8437pgoynpmiw6atmahl" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="geography" validate="true"/>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-30">
+        <addForeignKeyConstraint baseColumnNames="roles_id" baseTableName="user_roles" constraintName="FKj9553ass9uctjrmh0gkqsmv0d" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="role" validate="true"/>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-31">
+        <addForeignKeyConstraint baseColumnNames="study_type_id" baseTableName="institute" constraintName="FKlmdyd0f70rvt1a8ek5mx0l6kb" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="study_type" validate="true"/>
+    </changeSet>
+    <changeSet author="monju (generated)" id="1659455205052-32">
+        <addForeignKeyConstraint baseColumnNames="institute_level_id" baseTableName="institute" constraintName="FKvhwlybi68e6hgbom3nrx88m3" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="institute_level" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

@@ -41,7 +41,7 @@ public class User extends AbstractAuditLog {
     @Column(length = 15)
     private String mobile;
 
-    @OneToMany(mappedBy = "role", cascade = CascadeType.DETACH)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Role> roles = new ArrayList<>();
 
     private Boolean isAccountExpired;
