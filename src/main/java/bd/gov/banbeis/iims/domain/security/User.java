@@ -1,6 +1,10 @@
 package bd.gov.banbeis.iims.domain.security;
 
+import bd.gov.banbeis.iims.domain.AbstractAuditLog;
+import bd.gov.banbeis.iims.serializer.BCryptPasswordDeserializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.Data;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.Instant;
@@ -10,7 +14,8 @@ import java.util.UUID;
 
 @Entity
 @Data
-public class User {
+@EntityListeners(AuditingEntityListener.class)
+public class User extends AbstractAuditLog {
     @Id
     @GeneratedValue
     private UUID id;
@@ -18,6 +23,7 @@ public class User {
     @Column(nullable = false, unique = true)
     private String username;
 
+    @JsonDeserialize(using = BCryptPasswordDeserializer.class)
     private String password;
 
     private Instant tokenValidTill;
