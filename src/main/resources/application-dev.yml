@@ -14,3 +14,10 @@ spring:
 #    user: root
 #    driver-class-name: com.mysql.cj.jdbc.Driver
 #    password: password
+
+jwt:
+  private.key: classpath:app.key
+  public.key: classpath:app.pub
+
+iims:
+  token-expiry-days: 360
