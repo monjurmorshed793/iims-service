@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.PostPersist;
+import javax.persistence.PrePersist;
+import java.util.UUID;
 
 @Component
 public class InstituteRawListener {
@@ -58,6 +60,11 @@ public class InstituteRawListener {
     @Autowired
     public static void setStudyTypeRepository(StudyTypeRepository studyTypeRepository) {
         InstituteRawListener.studyTypeRepository = studyTypeRepository;
+    }
+
+    @PrePersist
+    private void beforeInsert(InstituteRaw instituteRaw){
+        instituteRaw.setId(UUID.randomUUID());
     }
 
 

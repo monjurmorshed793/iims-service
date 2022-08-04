@@ -1,20 +1,19 @@
 package bd.gov.banbeis.iims.domain.institute;
 
+import bd.gov.banbeis.iims.listener.InstituteRawListener;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
 @Data
 @Table(name="institute_raw")
+@EntityListeners(InstituteRawListener.class)
 public class InstituteRaw {
     @Id
     @GeneratedValue
-    private UUID id;
+    private UUID id = UUID.randomUUID();
     private String district;
     private String upazila;
     private String instituteType;

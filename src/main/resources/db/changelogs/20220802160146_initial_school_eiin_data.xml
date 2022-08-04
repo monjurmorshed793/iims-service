@@ -1,0 +1,29 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <property name="uuid_type" value="uuid" dbms="postgresql"/>
+    <property name="uuid_type" value="uniqueidentifier" dbms="mssql"/>
+    <property name="uuid_type" value="RAW(16)" dbms="oracle"/>
+
+    <property name="uuid_function" value="uid.uuid_generate_v4()" dbms="postgresql"/>
+    <property name="uuid_function" value="NEWID()" dbms="mssql"/>
+    <property name="uuid_function" value="sys_guid()" dbms="oracle"/>
+    <changeSet id="00000000001" author="Monjur">
+        <loadData tableName="institute_raw" file="db/data/school.csv" separator="," >
+            <column name="district" type="VARCHAR(255)"/>
+            <column name="upazila" type="VARCHAR(255)"/>
+            <column name="institute_type" type="VARCHAR(255)"/>
+            <column name="institute_level" type="VARCHAR(255)"/>
+            <column name="eiin" type="VARCHAR(255)"/>
+            <column name="institute_name" type="VARCHAR(255)"/>
+            <column name="address" type="VARCHAR(255)"/>
+            <column name="post" type="VARCHAR(255)"/>
+            <column name="mobile" type="VARCHAR(255)"/>
+            <column name="management" type="VARCHAR(255)"/>
+            <column name="mpo" type="VARCHAR(255)"/>
+            <column name="study_type" type="VARCHAR(255)"/>
+            <column name="area" type="VARCHAR(255)"/>
+            <column name="geography" type="VARCHAR(255)"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>
